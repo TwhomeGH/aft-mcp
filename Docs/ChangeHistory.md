@@ -22,3 +22,19 @@
 
 ---
 -->
+## 2026.11.15 00:06 建立 AFT 唯讀工具 MCP 適配器
+
+**類型**: 新增 · **檔案**: `src/index.mjs`
+
+### 問題 - AFT 只有 host plugin 入口，Codex 等 MCP host 無法使用它的唯讀程式碼工具
+
+### 根因 - AFT 的工具面透過 aft-bridge 的 NDJSON 協議呼叫原生 binary，並沒有 MCP server 入口
+
+### 修改 - 建立 Node MCP server：spawn aft.exe、configure 帶 harness=mcp:<client>、轉送 tool_call
+
+- 提供 grep／glob／search／outline／zoom／inspect／callgraph／conflicts 等唯讀工具。
+- 接入 changelogkit（.changelog.toml、Docs/ChangeHistory.md、TODO.md）。
+
+**相關文件**: README.md
+
+---
