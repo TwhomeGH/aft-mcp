@@ -1,0 +1,10 @@
+[tool.changelog]
+title = "aft-mcp — 變更歷史"
+project = "aft-mcp"
+history = "Docs/ChangeHistory.md"
+todo = "TODO.md"
+exclude = ["node_modules/**"]
+
+[[tool.changelog.sources]]
+name = "aft-mcp"
+path = "."
